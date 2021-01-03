@@ -1,21 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
+// import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  StyleSheet, Text, View, SafeAreaView, Image,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+  Alert,
+  Platform,
+  StatusBar,
+  Dimensions,
+  Button
+} from 'react-native';
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import WelcomeScreen from './app/screens/WelcomeScreen';
 
 export default function App() {
+  const { landscape } = useDeviceOrientation();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <WelcomeScreen />
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    flexDirection: 'column',
+    backgroundColor: 'gray',
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     justifyContent: 'center',
+    alignContent: 'center'
+
   },
 });
