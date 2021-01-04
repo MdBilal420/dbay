@@ -1,18 +1,26 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, View, Text } from 'react-native';
+import AppButton from '../components/AppButton';
+import AppText from '../components/AppText';
+import colors from '../config/colors';
 
 function WelcomeScreen(props) {
     return (
         <ImageBackground
+            blurRadius={5}
             style={styles.background}
-            source={require("../assets/wc1.jpg")}
+            source={require("../assets/wc2.jpg")}
         >
-            <Image
-                style={styles.logo}
-                source={require("../assets/logoq.png")}
-            />
-            <Text>where buyers meet sellers</Text>
-            <View style={styles.loginButton}></View>
+            <View style={styles.logoContainer}>
+                <Image
+                    style={styles.logo}
+                    source={require("../assets/logo3.png")}
+                />
+            </View>
+            <View style={styles.buttonContainer}>
+                <AppButton title="Login" />
+                <AppButton title="Sign Up" color="secondary" textColor="primary" />
+            </View>
             <View style={styles.signupButton}></View>
         </ImageBackground>
     );
@@ -22,27 +30,22 @@ const styles = StyleSheet.create({
     background: {
         flex: 1,
         justifyContent: 'flex-end',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding: 20
     },
-    loginButton: {
+    buttonContainer: {
+        padding: 20,
         width: '100%',
-        height: 50,
-        backgroundColor: 'white'
     },
-    signupButton: {
-        width: '100%',
-        height: 50,
-        backgroundColor: '#542075'
-    },
+
     logo: {
-        height: 300,
-        width: 300,
-        position: 'absolute',
-        top: -20
+        height: 250,
+        width: 250,
     },
-    tagline: {
-        top: -10,
-        position: 'absolute'
+    logoContainer: {
+        top: 5,
+        position: 'absolute',
+        alignItems: 'center'
     }
 })
 

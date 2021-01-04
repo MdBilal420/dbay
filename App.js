@@ -12,22 +12,14 @@ import {
 } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 import WelcomeScreen from './app/screens/WelcomeScreen';
-
+import Card from './app/components/Card';
+import ListingDetailScreen from './app/screens/ListingDetailScreen';
+import ViewImageScreen from './app/screens/ViewImageScreen';
+import MessageScreen from './app/screens/MessageScreen'
 export default function App() {
-  const { landscape } = useDeviceOrientation();
+
   return (
-    <WelcomeScreen />
+    <MessageScreen />
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: 'gray',
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    justifyContent: 'center',
-    alignContent: 'center'
-
-  },
-});
