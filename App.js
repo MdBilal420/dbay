@@ -16,10 +16,16 @@ import Card from './app/components/Card';
 import ListingDetailScreen from './app/screens/ListingDetailScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import MessageScreen from './app/screens/MessageScreen'
-export default function App() {
+import Screen from './app/components/Screen';
+import Icon from './app/components/Icon'
+import colors from './app/config/colors';
+import ListItemDeleteAction from './app/components/ListItemDeleteAction';
+import ListItem from './app/components/ListItem';
+import AccountScreen from './app/screens/AccountScreen'
 
+export default function App() {
   return (
-    <MessageScreen />
+    <AccountScreen />
   );
 }
 
