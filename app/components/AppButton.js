@@ -4,10 +4,10 @@ import { Text, View, StyleSheet, TouchableNativeFeedback, TouchableOpacity } fro
 import colors from '../config/colors';
 
 
-function AppButton({ title, color = "primary", textColor = "secondary" }) {
+function AppButton({ title, color = "primary", textColor = "secondary", onPress }) {
 
     return (
-        <TouchableOpacity style={[styles.button, { backgroundColor: colors[color] }]} >
+        <TouchableOpacity style={[styles.button, { backgroundColor: colors[color] }]} onPress={onPress} >
             <Text style={[styles.text, { color: colors[textColor] }]}>{title}</Text>
         </TouchableOpacity>
     )
@@ -22,13 +22,14 @@ const styles = StyleSheet.create({
         padding: 5,
         width: '100%',
         backgroundColor: colors.primary,
-        marginBottom: 15
+        marginBottom: 15,
+        marginTop: 15
     },
     text: {
         fontSize: 18,
         fontWeight: 'bold',
-        paddingLeft: 100,
-        color: colors.primary
+        color: colors.primary,
+        alignSelf: 'center',
     }
 })
 

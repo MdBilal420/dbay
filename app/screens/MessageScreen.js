@@ -4,6 +4,7 @@ import ListItem from '../components/ListItem';
 import ListItemDeleteAction from '../components/ListItemDeleteAction';
 import ListItemSeparator from '../components/ListItemSeparator';
 import Screen from '../components/Screen';
+import colors from '../config/colors';
 
 
 const initialMessages = [
@@ -30,7 +31,7 @@ function MessageScreen(props) {
     }
 
     return (
-        <Screen>
+        <Screen style={styles.screen}>
             <FlatList
                 data={messages}
                 keyExtractor={message => message.id.toString()}
@@ -58,6 +59,9 @@ function MessageScreen(props) {
 }
 
 const styles = StyleSheet.create({
+    screen: {
+        backgroundColor: colors.primary
+    },
     swipe: {
         width: 70, backgroundColor: 'blue'
     }

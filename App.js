@@ -9,7 +9,8 @@ import {
   StatusBar,
   Dimensions,
   Button,
-  TextInput
+  TextInput,
+  Switch
 } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 import WelcomeScreen from './app/screens/WelcomeScreen';
@@ -24,19 +25,17 @@ import ListItemDeleteAction from './app/components/ListItemDeleteAction';
 import ListItem from './app/components/ListItem';
 import AccountScreen from './app/screens/AccountScreen'
 import ListingsScreen from './app/screens/ListingsScreen'
+import ListingEditScreen from './app/screens/ListingEditScreen'
 import AppTextInput from './app/components/AppTextInput';
+import AppPicker from './app/components/AppPicker'
+import LoginScreen from './app/screens/LoginScreen';
+import AppFormField from './app/components/forms/AppFormField';
+
 
 export default function App() {
 
-  const [text, setText] = useState('');
-
   return (
-    <Screen>
-      <AppTextInput
-        icon="email"
-        placeholder="Enter Input"
-      />
-    </Screen>
+    <ListingEditScreen />
   );
 }
 
