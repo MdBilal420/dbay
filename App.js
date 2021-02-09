@@ -1,5 +1,5 @@
 // import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   StyleSheet, Text, View, SafeAreaView, Image,
   TouchableWithoutFeedback,
@@ -13,6 +13,9 @@ import {
   Switch
 } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import * as ImagePicker from 'expo-image-picker';
+
+
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import Card from './app/components/Card';
 import ListingDetailScreen from './app/screens/ListingDetailScreen';
@@ -30,6 +33,8 @@ import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker'
 import LoginScreen from './app/screens/LoginScreen';
 import AppFormField from './app/components/forms/AppFormField';
+import ImageInput from './app/components/ImageInput';
+import ImageInputList from './app/components/ImageInputList';
 
 
 export default function App() {
